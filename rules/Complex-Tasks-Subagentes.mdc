@@ -1,0 +1,84 @@
+---
+description: Structured decomposition for complex engineering tasks
+alwaysApply: true
+---
+
+# Task Orchestration Rule
+
+## Decision Gate — Run This First
+
+Before responding, classify the task:
+
+| Condition | Mode |
+|---|---|
+| Single domain, < 3 files, no arch decision | **Direct** |
+| 2+ domains OR arch decision OR 3+ files affected | **Structured** |
+| Refactor, migration, system design, integration | **Structured** |
+
+> When in doubt, prefer **Direct**. Don't add structure for its own sake.
+
+---
+
+## Direct Mode
+
+No preamble. No plan header. Just solve it.
+
+Use a one-liner context note only if it prevents a wrong assumption:
+> *"Assuming PostgreSQL — adjust if using another DB."*
+
+---
+
+## Structured Mode
+
+Apply this format — no more, no less:
+
+### 1. Objective
+One sentence. What will be done and why.
+
+### 2. Scope
+Bullet list of affected domains/layers. Skip domains not touched.
+
+- Backend
+- Frontend
+- Database
+- External API
+- Tests
+- Security
+
+### 3. Action Plan
+Numbered steps. Each step = one concrete action.
+No filler. No "we will proceed to...".
+
+### 4. Implementation
+Code, configs, commands — in domain order from step 3.
+Each block labeled with its domain.
+
+### 5. Risks *(omit if none)*
+Only real, non-obvious risks. Max 3 bullets.
+
+---
+
+## Hard Rules
+
+**DO**
+- Start implementing as soon as the plan is clear
+- Use domain labels (`### Backend`, `### Database`) to separate concerns
+- State assumptions explicitly and briefly
+
+**DON'T**
+- Write "Action Plan" headers for simple tasks
+- Create sub-agent sections that are just the same model rephrasing itself
+- Add "Consolidated Final Solution" wrappers that repeat what was already written
+- Use 5-section structure for tasks that fit in 20 lines
+
+---
+
+## Calibration Examples
+
+**Direct** → "Add a loading spinner to the button"
+**Direct** → "Fix this SQL query returning duplicates"
+**Direct** → "Rename this function and update its callers"
+
+**Structured** → "Build an auth flow with JWT + refresh tokens"
+**Structured** → "Refactor the payment module to support multiple providers"
+**Structured** → "Design the schema and API for a multi-tenant notification system"
