@@ -12,7 +12,8 @@ Rules, commands e skills pessoais do Cursor, versionados neste repositório.
 
 1. Edite os arquivos neste repositório (`~/CursorRulesSkills/`).
 2. `git commit` + `git push` para backup.
-3. Os symlinks propagam a alteração automaticamente — sem copiar entre projetos.
+3. Rules nos projetos e `~/.cursor` no WSL usam symlink — propagam sozinhas.
+4. No Cursor Windows, commands do menu `/` vêm de `C:\Users\furin\.cursor\commands`. Depois de alterar um command, rode `/sync-cursor-commands` (ou o script `skills/sync-cursor-commands/scripts/sync.sh`) e faça Reload Window.
 
 ## Rules e commands específicos de projeto
 
