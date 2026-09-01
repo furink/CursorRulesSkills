@@ -7,6 +7,7 @@ Rules, commands e skills pessoais do Cursor, versionados neste repositório.
 - `rules/` — rules compartilhadas (symlink por arquivo em cada projeto: `.cursor/rules/`)
 - `commands/` — commands globais (symlink em `~/.cursor/commands/`)
 - `skills/` — skills globais (symlink em `~/.cursor/skills/`)
+- `/gerar-pdf` — Markdown → PDF A4 no layout navy (skill `skills/gerar-pdf/`)
 
 ## Como editar
 
