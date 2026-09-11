@@ -9,6 +9,7 @@ Rules, commands e skills pessoais do Cursor, versionados neste repositório.
 - `skills/` — skills globais (symlink em `~/.cursor/skills/`)
 - `/gerar-pdf` — Markdown → PDF A4 no layout navy (skill `skills/gerar-pdf/`)
 - `/gerar-word` — Markdown → Word A4 no layout navy (skill `skills/gerar-word/`)
+- `/gerar-xlsx` — CSV (ou tabelas Markdown) → Excel navy, zebrado, Legenda (skill `skills/gerar-xlsx/`)
 
 ## Como editar
 
